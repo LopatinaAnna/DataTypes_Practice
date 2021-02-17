@@ -11,24 +11,15 @@ namespace Structures
             if (IsSquare(a, b, c, d))
                 Points = new[] { a, b, c, d };
             else
-                throw new Exception("This is not a square.");
+                throw new Exception("\nThis is not a square.");
         }
 
-        public double GetHeight()
-        {
-            return Math.Round(Math.Sqrt(Distance(Points[0], Points[1])), 2);
-        }
+        public double Width() 
+            => Math.Round(Math.Sqrt(Distance(Points[0], Points[1])), 2); 
 
-        public double GetWidth()
-        {
-            return GetHeight();
-        }
-
-        public double GetArea()
-        {
-            return Math.Round(Math.Pow(GetHeight(), 2), 2);
-        }
-
+        public double Area() 
+            => Math.Round(Width() * Width(), 2); 
+            
         private bool IsSquare(Point a, Point b, Point c, Point d)
             => Distance(a, b) == Distance(b, c) &&
             Distance(b, c) == Distance(c, d) &&
