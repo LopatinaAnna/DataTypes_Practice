@@ -1,4 +1,5 @@
 ﻿using System;
+using static Structures.Validation;
 
 namespace Structures
 {
@@ -13,10 +14,10 @@ namespace Structures
                 new Point(4, 2), 
                 new Point(2, 2) 
             };
-
+            
             if (points.Length == 4)
             {
-                try
+                if(IsSquare(points))
                 {
                     var square = new Square(points);
 
@@ -24,12 +25,12 @@ namespace Structures
                     Console.WriteLine($"Width: {square.Width()}");
                     Console.WriteLine($"Area: {square.Area()}");
                 }
-                catch (Exception ex)
+                else
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine("\nThis is not a square.");
                 }
 
-                try
+                if (IsRectangle(points))
                 {
                     var rectangle = new Rectangle(points);
 
@@ -38,24 +39,24 @@ namespace Structures
                     Console.WriteLine($"Height: {rectangle.Height()}");
                     Console.WriteLine($"Area: {rectangle.Area()}");
                 }
-                catch (Exception ex)
+                else
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine("\nThis is not a rectangle.");
                 }
             }
 
             if (points.Length == 3)
             {
-                try
+                if (IsTriangle(points))
                 {
                     var triangle = new Triangle(points);
 
                     Console.WriteLine("\nThis is a triangle:");
                     Console.WriteLine($"Area: {triangle.Area()}");
                 }
-                catch (Exception ex)
+                else
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine("\nThis is not a triangle");
                 }
             }
         }
