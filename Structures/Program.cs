@@ -49,6 +49,18 @@ namespace Structures
             {
                 Console.WriteLine(ex.Message);
             }
+
+            try
+            {
+                var triangle = new Triangle(points[0], points[1], points[2]);
+
+                Console.WriteLine("\nThis is a triangle:");
+                Console.WriteLine($"Area: {triangle.Area()}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
