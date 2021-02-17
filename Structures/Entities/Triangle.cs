@@ -4,10 +4,10 @@ namespace Structures
 {
     class Triangle : Figure
     {
-        public Triangle(Point a, Point b, Point c)
+        public Triangle(Point[] points)
         {
-            if (IsTriangle(a, b, c))
-                Points = new[] { a, b, c };
+            if (IsTriangle(points))
+                Points = points;
             else
                 throw new Exception("\nThis is not a triangle.");
         }
@@ -16,7 +16,9 @@ namespace Structures
             => Math.Abs((Points[0].X - Points[2].X) * (Points[1].Y - Points[2].Y) - 
             (Points[1].X - Points[2].X) * (Points[0].Y - Points[2].Y)) / 2;
 
-        private bool IsTriangle(Point a, Point b, Point c) 
-            => Distance(a, b) > 0 && Distance(b, c) > 0 && Distance(c, a) > 0;
+        private bool IsTriangle(Point[] points) 
+            => Distance(points[0], points[1]) > 0 && 
+            Distance(points[1], points[2]) > 0 && 
+            Distance(points[2], points[0]) > 0;
     }
 }

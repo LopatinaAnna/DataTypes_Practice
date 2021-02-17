@@ -4,10 +4,10 @@ namespace Structures
 {
     class Rectangle : Figure
     {
-        public Rectangle(Point a, Point b, Point c, Point d)
+        public Rectangle(Point[] points)
         {
-            if (IsRectangle(a, b, c, d))
-                Points = new[] { a, b, c, d };
+            if (IsRectangle(points))
+                Points = points;
             else
                 throw new Exception("\nThis is not a rectangle.");
         }
@@ -21,7 +21,8 @@ namespace Structures
         public override double Area()
             => Math.Round(Height() * Width(), 2); 
        
-        private bool IsRectangle(Point a, Point b, Point c, Point d)
-            => Distance(a, b) == Distance(c, d) && Distance(b, c) == Distance(d, a);
+        private bool IsRectangle(Point[] points)
+            => Distance(points[0], points[1]) == Distance(points[2], points[3]) && 
+            Distance(points[1], points[2]) == Distance(points[3], points[0]);
     }
 }

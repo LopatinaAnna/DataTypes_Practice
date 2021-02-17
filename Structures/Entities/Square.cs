@@ -4,10 +4,10 @@ namespace Structures
 {
     public class Square : Figure
     {
-        public Square(Point a, Point b, Point c, Point d)
+        public Square(Point[] points)
         {
-            if (IsSquare(a, b, c, d))
-                Points = new[] { a, b, c, d };
+            if (IsSquare(points))
+                Points = points;
             else
                 throw new Exception("\nThis is not a square.");
         }
@@ -18,9 +18,9 @@ namespace Structures
         public override double Area() 
             => Math.Round(Width() * Width(), 2); 
             
-        private bool IsSquare(Point a, Point b, Point c, Point d)
-            => Distance(a, b) == Distance(b, c) &&
-            Distance(b, c) == Distance(c, d) &&
-            Distance(c, d) == Distance(d, a);
+        private bool IsSquare(Point[] points)
+            => Distance(points[0], points[1]) == Distance(points[1], points[2]) &&
+            Distance(points[1], points[2]) == Distance(points[2], points[3]) &&
+            Distance(points[2], points[3]) == Distance(points[3], points[0]);
     }
 }

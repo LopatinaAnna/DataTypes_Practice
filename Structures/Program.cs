@@ -18,7 +18,7 @@ namespace Structures
             {
                 try
                 {
-                    var square = new Square(points[0], points[1], points[2], points[3]);
+                    var square = new Square(points);
 
                     Console.WriteLine("\nThis is a square:");
                     Console.WriteLine($"Width: {square.Width()}");
@@ -31,7 +31,7 @@ namespace Structures
 
                 try
                 {
-                    var rectangle = new Rectangle(points[0], points[1], points[2], points[3]);
+                    var rectangle = new Rectangle(points);
 
                     Console.WriteLine("\nThis is a rectangle:");
                     Console.WriteLine($"Width: {rectangle.Width()}");
@@ -48,7 +48,7 @@ namespace Structures
             {
                 try
                 {
-                    var triangle = new Triangle(points[0], points[1], points[2]);
+                    var triangle = new Triangle(points);
 
                     Console.WriteLine("\nThis is a triangle:");
                     Console.WriteLine($"Area: {triangle.Area()}");
