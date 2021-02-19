@@ -34,16 +34,18 @@ namespace Strings_1
             var timer = new Stopwatch();
 
             timer.Start();
-            inputString.Replace(charToRemove, string.Empty);
+            inputString = inputString.Replace(charToRemove, string.Empty);
             timer.Stop();
 
             Console.WriteLine($"String: {timer.Elapsed.TotalMilliseconds} ms");
+            Console.WriteLine(inputString);
 
             timer.Restart();
             stringBuilder.Replace(charToRemove, string.Empty);
             timer.Stop();
 
-            Console.WriteLine($"StringBuilder: {timer.Elapsed.TotalMilliseconds} ms");
+            Console.WriteLine($"\nStringBuilder: {timer.Elapsed.TotalMilliseconds} ms");
+            Console.WriteLine(stringBuilder);
         }
     }
 }
