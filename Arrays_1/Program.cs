@@ -26,7 +26,13 @@ namespace Arrays_1
             Print(points, "Insert new value (7, 8) in the middle");
 
             points.Insert(new Point(8, 9), 8);
-            Print(points, "Insert new value (8, 9) at the end"); ;
+            Print(points, "Insert new value (8, 9) at the end");
+
+            points.Remove(new Point(0, 1));
+            Print(points, "Remove value (0, 1)");
+
+            points.RemoveAt(0);
+            Print(points, "Remove at index 0");
         }
 
         static void Print(PointsCollection points, string message)

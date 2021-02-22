@@ -58,12 +58,24 @@ namespace Arrays_1
 
         public void Remove(Point point)
         {
-
+            for (int i = 0; i < length; i++)
+            {
+                if(points[i].Equals(point))
+                {
+                    RemoveAt(i);
+                    break;
+                }
+            }
         }
 
         public void RemoveAt(int index)
         {
+            for (int i = index; i < length - 1; i++)
+            {
+                points[i] = points[i + 1];
+            }
 
+            length--;
         }
 
         public IEnumerator<Point> GetEnumerator()
