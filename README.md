@@ -22,3 +22,11 @@ Write a program that will build possible figures from given points:
   <li>enter a character into the console</li>
   <li>remove entered character from string</li>
 </ul>
+
+## Strings #2
+<ul>
+  <li>enter a first string into the console</li>
+  <li>enter a second string into the console</li>
+  <li>insert second string before first</li>
+  <li>compare run time with String and StringBuilder</li>
+</ul>
