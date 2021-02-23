@@ -25,6 +25,12 @@ namespace Arrays_1
             length = 0;
         }
 
+        public Point this[int index]
+        {
+            get => points[index];
+            set => points[index] = value;
+        }
+
         public void Add(Point point)
         {
             if (length == points.Length)
@@ -88,7 +94,7 @@ namespace Arrays_1
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return points.GetEnumerator();
+            return GetEnumerator();
         }
     }
 }
