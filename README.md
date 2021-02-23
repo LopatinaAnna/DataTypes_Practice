@@ -30,3 +30,13 @@ Write a program that will build possible figures from given points:
   <li>insert second string before first</li>
   <li>compare run time with String and StringBuilder</li>
 </ul>
+
+## Arrays #1
+Write custom collection that stores points (Point structures) and can:
+<ul>
+  <li>add item to collection</li>
+  <li>remove item</li>
+  <li>delete by index</li>
+  <li>add by index</li>
+  <li>iterate items in the foreach</li>
+</ul>
